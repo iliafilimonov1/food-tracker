@@ -4,4 +4,4 @@ This will allow the user to select a food from the <select> dropdown, enter the 
 
 API Documentation:
 
-[Base URL]: (https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/{namespace})
+[Base URL](https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/{namespace})

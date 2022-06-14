@@ -1,4 +1,5 @@
 import FetchWrapper from "./fetch-wrapper.js";
+import { capitalize, calculateCalories } from "./helpers.js";
 
 // * Start by importing the FetchWrapper and instantiating it.
 // * Copy the Base URL and pass it as the first (and only) argument to new FetchWrapper().
@@ -42,16 +43,16 @@ form.addEventListener("submit", (event) => {
         list.insertAdjacentHTML(
             "beforeend",
             `<li class="card">
-          <div>
-            <h3 class="name">${name.value}</h3>
-            <div class="calories">0 calories</div>
-            <ul class="macros">
-              <li class="carbs"><div>Carbs</div><div class="value">${carbs.value}g</div></li>
-              <li class="protein"><div>Protein</div><div class="value">${protein.value}g</div></li>
-              <li class="fat"><div>Fat</div><div class="value">${fat.value}g</div></li>
-            </ul>
-          </div>
-        </li>`
+            <div>
+              <h3 class="name">${capitalize(name.value)}</h3>
+              <div class="calories">${calculateCalories(carbs.value, protein.value, fat.value)} calories</div>
+              <ul class="macros">
+                <li class="carbs"><div>Carbs</div><div class="value">${carbs.value}g</div></li>
+                <li class="protein"><div>Protein</div><div class="value">${protein.value}g</div></li>
+                <li class="fat"><div>Fat</div><div class="value">${fat.value}g</div></li>
+              </ul>
+            </div>
+          </li>`
         );
 
         name.value = "";
@@ -60,4 +61,3 @@ form.addEventListener("submit", (event) => {
         fat.value = "";
     });
 });
-

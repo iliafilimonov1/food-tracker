@@ -1,0 +1,23 @@
+{
+  "name": "food-tracker",
+  "version": "1.0.0",
+  "description": "food tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyafilimonov/food-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilyafilimonov/food-tracker/issues"
+  },
+  "homepage": "https://github.com/ilyafilimonov/food-tracker#readme",
+  "dependencies": {
+    "snackbar": "^1.1.0"
+  }
+}

@@ -2,10 +2,13 @@ import "../css/style.css";
 import FetchWrapper from "./fetch-wrapper.js";
 import { capitalize, calculateCalories } from "./helpers.js";
 import snackbar from "snackbar";
+import AppData from "./app-data.js";
 
 const API = new FetchWrapper(
     "https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/YOURNAMESPACEHERE"
 );
+
+const appData = new AppData;
 
 const list = document.querySelector("#food-list");
 const form = document.querySelector("#create-form");

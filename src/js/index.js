@@ -103,15 +103,6 @@ const renderChart = () => {
                     borderWidth: 3, // example of other customization
                 },
             ],
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
         }
     });
 };

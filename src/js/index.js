@@ -3,6 +3,10 @@ import FetchWrapper from "./fetch-wrapper.js";
 import { capitalize, calculateCalories } from "./helpers.js";
 import snackbar from "snackbar";
 import AppData from "./app-data.js";
+import { Chart, LineController, LineElement, Tooltip, BarController, BarElement, CategoryScale, PointElement, LinearScale, Title, ScatterController } from 'chart.js'
+Chart.register(LineController, ScatterController, BarController, BarElement, CategoryScale, Tooltip, LineElement, PointElement, LinearScale, Title);
+
+window['Chart'] = Chart;
 
 const API = new FetchWrapper(
     "https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/YOURNAMESPACEHERE"
@@ -18,6 +22,7 @@ const protein = document.querySelector("#create-protein");
 const fat = document.querySelector("#create-fat");
 
 const displayEntry = (name, carbs, protein, fat) => {
+    appData.addFood(carbs, protein, fat);
     list.insertAdjacentHTML(
         "beforeend",
         `<li class="card">
@@ -59,6 +64,7 @@ form.addEventListener("submit", (event) => {
         snackbar.show("Food added successfully.");
 
         displayEntry(name.value, carbs.value, protein.value, fat.value);
+        renderChart();
 
         name.value = "";
         carbs.value = "";
@@ -79,7 +85,39 @@ const init = () => {
                 fields.fat.integerValue
             );
         });
+        renderChart();
     });
 }
+
+let chartInstance = null;
+const renderChart = () => {
+    chartInstance?.destroy();
+    const context = document.querySelector("#app-chart").getContext("2d");
+
+    chartInstance = new Chart(context, {
+        type: "bar",
+        data: {
+            labels: ["Carbs", "Protein", "Fat"],
+            datasets: [
+                {
+                    label: "Macronutrients",
+                    data: [appData.getTotalCarbs(), appData.getTotalProtein(), appData.getTotalFat()],
+                    backgroundColor: ["#25AEEE", "#FECD52", "#57D269"],
+                    borderWidth: 3, // example of other customization
+                },
+            ],
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+};
+
 
 init();

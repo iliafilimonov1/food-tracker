@@ -3,10 +3,7 @@ import FetchWrapper from "./fetch-wrapper.js";
 import { capitalize, calculateCalories } from "./helpers.js";
 import snackbar from "snackbar";
 import AppData from "./app-data.js";
-import { Chart, LineController, LineElement, Tooltip, BarController, BarElement, CategoryScale, PointElement, LinearScale, Title, ScatterController } from 'chart.js'
-Chart.register(LineController, ScatterController, BarController, BarElement, CategoryScale, Tooltip, LineElement, PointElement, LinearScale, Title);
-
-window['Chart'] = Chart;
+import Chart from "chart.js/auto";
 
 const API = new FetchWrapper(
     "https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/YOURNAMESPACEHERE"
@@ -64,7 +61,7 @@ form.addEventListener("submit", (event) => {
         snackbar.show("Food added successfully.");
 
         displayEntry(name.value, carbs.value, protein.value, fat.value);
-        renderChart();
+        render();
 
         name.value = "";
         carbs.value = "";
@@ -85,7 +82,7 @@ const init = () => {
                 fields.fat.integerValue
             );
         });
-        renderChart();
+        render();
     });
 }
 
@@ -118,6 +115,17 @@ const renderChart = () => {
         }
     });
 };
+
+const totalCalories = document.querySelector("#total-calories");
+
+const updateTotalCalories = () => {
+    totalCalories.textContent = appData.getTotalCalories();
+}
+
+const render = () => {
+    renderChart();
+    updateTotalCalories();
+}
 
 
 init();

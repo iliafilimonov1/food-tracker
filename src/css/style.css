@@ -1,10 +1,10 @@
 :root {
   --white: #fff;
-  --black: #000;
+  --black: #1d2734;
 
-  --primary-1: #c47e35;
-  --primary-2: #dca15d;
-  --primary-3: #dabb94;
+  --primary-1: #3a817d;
+  --primary-2: #1c635f;
+  --primary-3: #244751;
   --primary-4: #f3dabc;
   --primary-5: #faf1e5;
 
@@ -23,8 +23,8 @@
 
 body {
   margin: 0;
-  font-family: "Open-Sans", sans-serif;
   background-color: var(--neutral-5);
+  font-family: "Open-Sans", sans-serif;
 }
 
 h1 {
@@ -45,7 +45,7 @@ a {
 
 h2,
 h3 {
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--black);
 }
 
 .btn {
@@ -215,7 +215,6 @@ input:not(.btn) {
   color: var(--black);
   margin-right: 20px;
 }
-
 .nav-tabs a#onlink {
   border-bottom: 7px solid var(--accent-1);
 }
@@ -249,10 +248,12 @@ input:not(.btn) {
 }
 
 select {
-  padding: 10px 15px;
+  width: 199px;
+  border-radius: 3px;
+  outline: none;
   margin-top: 5px;
-  border-radius: 8px;
-  width: 200px;
+  padding: 12px 12px;
+  border: 0;
 }
 
 .nutrition-values {
@@ -330,12 +331,10 @@ select {
   color: #f3ad6c;
   font-size: 18px;
 }
-
 .card .protein::marker {
   color: #c7443e;
   font-size: 18px;
 }
-
 .card .fat::marker {
   color: #f9dc6e;
   font-size: 18px;
@@ -351,7 +350,6 @@ select {
 .card .macros ul {
   padding-left: 0;
 }
-
 .card .macros li {
   margin: 0 10px;
   text-align: center;
@@ -367,43 +365,10 @@ select {
   color: #777;
 }
 
-#total-calories-container {
-  border: 1px solid var(--primary-3);
-}
-
 #total-calories-container h3 {
   margin-bottom: 0;
   font-weight: normal;
 }
-
 #total-calories-container span {
   font-weight: bold;
 }
-
-/*snackbar start */
-.snackbar {
-  display: inline-block;
-  position: fixed;
-  background: #323232;
-  color: #f1f1f1;
-  min-height: 50px;
-  min-width: 290px;
-  padding: 16px 24px 12px;
-  box-sizing: border-box;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  border-radius: 2px;
-  bottom: 1rem;
-  left: 1rem;
-  font-size: 90%;
-  transition: visibility 0.3s, transform 0.3s;
-  transform: translateY(100px);
-  visibility: hidden;
-  will-change: transform;
-}
-
-.snackbar--visible {
-  visibility: visible;
-  transform: none;
-}
-
-/*snackbar end*/

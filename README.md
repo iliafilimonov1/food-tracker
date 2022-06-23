@@ -1,6 +1,13 @@
 # Food tracker project
 
-Make a POST request to the Firebase API when the user submits the form. This will allow the user to select a food from the dropdown, enter the number of carbs, protein, and fat. When the form is submitted, a POST request should be sent containing the data provided by the user, following the API documentation below.
+## Metrics:
+
+* **Lighthouse**:
+
+
+## Introduction
+
+**Food tracker** — This is a javascript application that uses Firebase API as a backend. It allows the user to select a food from the dropdown, enter the number of carbs, protein, and fat. When the form is submitted, a POST request is sent containing the data provided by the user, following the API documentation below.
 
 ## Setup
 

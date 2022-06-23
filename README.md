@@ -1,6 +1,6 @@
 # Food tracker project
 
-**make a POST request to the Firebase API when the user submits the form. This will allow the user to select a food from the dropdown, enter the number of carbs, protein, and fat. When the form is submitted, a POST request should be sent containing the data provided by the user, following the API documentation below.**
+Make a POST request to the Firebase API when the user submits the form. This will allow the user to select a food from the dropdown, enter the number of carbs, protein, and fat. When the form is submitted, a POST request should be sent containing the data provided by the user, following the API documentation below.
 
 ## Setup
 

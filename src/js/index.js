@@ -99,7 +99,7 @@ const renderChart = () => {
                     label: "Macronutrients",
                     data: [appData.getTotalCarbs(), appData.getTotalProtein(), appData.getTotalFat()],
                     backgroundColor: ["#25AEEE", "#FECD52", "#57D269"],
-                    borderWidth: 3, // example of other customization
+                    borderWidth: 2,
                 },
             ],
         }

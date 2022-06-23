@@ -1,4 +1,3 @@
-import "../css/style.css";
 import FetchWrapper from "./fetch-wrapper.js";
 import { capitalize, calculateCalories } from "./helpers.js";
 import snackbar from "snackbar";

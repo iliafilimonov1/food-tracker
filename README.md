@@ -3,6 +3,7 @@
 ## Metrics:
 
 * **Lighthouse**:
+![1](https://user-images.githubusercontent.com/43762313/175288383-fb8625dd-f4a1-4c03-9d9b-0eb62b5bedee.jpg)
 
 
 ## Introduction

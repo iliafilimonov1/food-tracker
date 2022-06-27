@@ -6,19 +6,11 @@
   --primary-2: #1c635f;
   --primary-3: #244751;
   --primary-4: #f3dabc;
-  --primary-5: #faf1e5;
 
-  --neutral-1: #2c2c2c;
-  --neutral-2: #434343;
-  --neutral-3: #94868b;
   --neutral-4: #d9cfd3;
   --neutral-5: #f2ecee;
 
   --accent-1: #458179;
-  --accent-2: #4da296;
-  --accent-3: #8dd8cf;
-  --accent-4: #92cfc7;
-  --accent-5: #d7f2ef;
 }
 
 body {
@@ -27,14 +19,15 @@ body {
   background-color: var(--neutral-5);
   font-family: "Open-Sans", sans-serif;
 }
+
 a {
   color: var(--primary-2);
   text-decoration: underline;
-  line-height: 1.4;
-  padding: 0.25em;
 }
 
 .btn {
+  color: var(--white);
+  background-color: var(--primary-1);
   border-radius: 3px;
   cursor: pointer;
   font-size: 14px;
@@ -42,41 +35,8 @@ a {
   margin: 20px 10px 10px 0;
   padding: 10px 30px;
   text-decoration: none;
-  max-width: 120px;
-  text-align: center;
-  display: inline-block;
-  transition: background-color 220ms, transform 220ms;
-  border: none;
-}
-
-.btn:active {
-  transform: translate(0.8px, 0.8px);
-}
-
-button.btn {
-  border: 1px solid var(--primary-3);
-}
-
-.btn-default {
-  color: var(--white);
-  background-color: var(--primary-1);
-}
-
-.btn-outline {
-  color: var(--primary-1);
-  background-color: var(--primary-4);
-  border: var(--primary-1) 2px solid;
-  box-shadow: 1px 1px 7px #c4c4c4;
-}
-
-.btn-active {
-  color: var(--primary-1);
-  background-color: var(--primary-4);
-}
-
-.btn-default:active {
-  color: var(--primary-1);
-  background-color: var(--primary-3);
+  max-width: 100px;
+  border: 0;
 }
 
 .btn:disabled {
@@ -85,14 +45,10 @@ button.btn {
 }
 
 #navbar {
-  width: 100%;
-  padding: 10px 0;
+  padding: 18px 0;
   box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.07),
     0px -3px 7px 1px rgba(0, 0, 0, 0.07);
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .nav-brand {
@@ -139,8 +95,6 @@ button.btn {
 
 label {
   display: block;
-  margin-bottom: 0.5em;
-  font-size: 16px;
 }
 
 input:not(.btn) {
@@ -250,7 +204,6 @@ input[type="number"] {
   padding: 15px;
   margin: 0;
   border-radius: 8px;
-  list-style: none;
   display: grid;
   place-items: center;
   text-align: center;
@@ -313,17 +266,12 @@ input[type="number"] {
   bottom: 1rem;
   left: 1rem;
   font-size: 90%;
-  -webkit-transition: visibility 0.3s, -webkit-transform 0.3s;
-  transition: visibility 0.3s, -webkit-transform 0.3s;
   transition: visibility 0.3s, transform 0.3s;
-  transition: visibility 0.3s, transform 0.3s, -webkit-transform 0.3s;
-  -webkit-transform: translateY(100px);
   transform: translateY(100px);
   visibility: hidden;
   will-change: transform;
 }
 .snackbar--visible {
   visibility: visible;
-  -webkit-transform: none;
   transform: none;
 }
